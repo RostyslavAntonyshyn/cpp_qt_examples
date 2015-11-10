@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+int n{0};
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -13,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->treeView->setModel(_model);
 
-    auto pred = [](Product prod) { return prod.price() < 13; };
+    auto pred = [](Product prod) { return prod.price(); };
 
     _model->ResetModel( _dbLayer->readProducts(pred) );
 
@@ -49,10 +51,33 @@ void MainWindow::undoClicked()
     }
 }
 
+void MainWindow::addClicked()
+{
+    n++;
+    int index{0};
+    Product a("default", 10);
+    _model->insertProduct(index,a);
+}
+
+void MainWindow::undoAddClicked()
+{
+
+    if(n > 0)
+    {
+        int index{0};
+        auto product = _model->removeProduct(index);
+        --n;
+    }
+}
+
 void MainWindow::init()
 {
     connect(ui->removeButton, &QPushButton::clicked,
             this, &MainWindow::removeClicked);
     connect(ui->undoButton, &QPushButton::clicked,
             this, &MainWindow::undoClicked);
+    connect(ui->addButton, &QPushButton::clicked,
+            this, &MainWindow::addClicked);
+    connect(ui->addundoButton, &QPushButton::clicked,
+            this, &MainWindow::undoAddClicked);
 }

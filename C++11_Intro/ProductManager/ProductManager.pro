@@ -27,3 +27,6 @@ FORMS    += mainwindow.ui
 
 DISTFILES += \
     data.txt
+
+RESOURCES += \
+    background.qrc

@@ -6,17 +6,17 @@
 
 class MenuItem;
 
-class Category
+class MenuCategory
 {
 public:
-    Category(const std::string &name);
+    MenuCategory(const std::string &name);
 
     void print();
     void addItem(MenuItem *item);
 private:
     std::string mName;
     std::vector<MenuItem *> mItems;
-    std::vector<Category *> mCategoryItems;
+    std::vector<MenuCategory *> mCategoryItems;
 };
 
 

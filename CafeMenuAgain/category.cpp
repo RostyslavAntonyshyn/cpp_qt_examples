@@ -4,16 +4,16 @@
 #include <iostream>
 
 
-Category::Category(const std::string &name) :
+MenuCategory::MenuCategory(const std::string &name) :
     mName{name}
 {
 }
 /*
 ****************************************************************************************************
 */
-void Category::print()
+void MenuCategory::print()
 {
-    std::cout << " <<< " << mName << " >>>" << std::endl;
+    std::cout << " *** " << mName << " ***" << std::endl;
 
     for (const auto &item: mItems)
     {
@@ -32,7 +32,7 @@ void Category::print()
 /*
 ****************************************************************************************************
 */
-void Category::addItem(MenuItem *item)
+void MenuCategory::addItem(MenuItem *item)
 {
     mItems.push_back(item);
 }

@@ -24,6 +24,8 @@ public:
 private:
     void removeClicked();
     void undoClicked();
+    void addClicked();
+    void undoAddClicked();
     void init();
 
 private:

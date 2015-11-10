@@ -10,8 +10,18 @@
     <height>300</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Buxton Sketch</family>
+    <pointsize>14</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Product Manager</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../../../../../Downloads/Glyphish-Glyphish-175-macbook.ico</normaloff>../../../../../../Downloads/Glyphish-Glyphish-175-macbook.ico</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -20,6 +30,20 @@
     </item>
     <item>
      <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QPushButton" name="addButton">
+        <property name="text">
+         <string>Add</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="addundoButton">
+        <property name="text">
+         <string>Undo Add</string>
+        </property>
+       </widget>
+      </item>
       <item>
        <widget class="QPushButton" name="removeButton">
         <property name="text">
@@ -49,6 +73,17 @@
    </property>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="windowTitle">
+    <string>Product Manager</string>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>

@@ -17,7 +17,7 @@ void MenuItem::print()
     std::cout << mName << " : "
               << mDescription << " - " << mPrice
               << "$ for " << mAmount
-              << " kilos " << std::endl;
+              << " g " << std::endl;
 }
 /*
 ****************************************************************************************************
